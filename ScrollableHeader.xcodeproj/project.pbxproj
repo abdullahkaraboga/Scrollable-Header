@@ -16,6 +16,7 @@
 		7BD83DB629709437001ECFDD /* ScrollableHeaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD83DB529709437001ECFDD /* ScrollableHeaderTests.swift */; };
 		7BD83DC029709437001ECFDD /* ScrollableHeaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD83DBF29709437001ECFDD /* ScrollableHeaderUITests.swift */; };
 		7BD83DC229709437001ECFDD /* ScrollableHeaderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD83DC129709437001ECFDD /* ScrollableHeaderUITestsLaunchTests.swift */; };
+		7BD83DD129709632001ECFDD /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD83DD029709632001ECFDD /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		7BD83DBB29709437001ECFDD /* ScrollableHeaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollableHeaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BD83DBF29709437001ECFDD /* ScrollableHeaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableHeaderUITests.swift; sourceTree = "<group>"; };
 		7BD83DC129709437001ECFDD /* ScrollableHeaderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableHeaderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7BD83DD029709632001ECFDD /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,8 @@
 		7BD83D9E29709433001ECFDD /* ScrollableHeader */ = {
 			isa = PBXGroup;
 			children = (
+				7BD83DCF29709607001ECFDD /* View */,
+				7BD83DCE297095F0001ECFDD /* Model */,
 				7BD83D9F29709433001ECFDD /* ScrollableHeaderApp.swift */,
 				7BD83DA129709433001ECFDD /* ContentView.swift */,
 				7BD83DA329709436001ECFDD /* Assets.xcassets */,
@@ -131,6 +135,21 @@
 				7BD83DC129709437001ECFDD /* ScrollableHeaderUITestsLaunchTests.swift */,
 			);
 			path = ScrollableHeaderUITests;
+			sourceTree = "<group>";
+		};
+		7BD83DCE297095F0001ECFDD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7BD83DCF29709607001ECFDD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7BD83DD029709632001ECFDD /* Home.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +284,7 @@
 			files = (
 				7BD83DA929709436001ECFDD /* Persistence.swift in Sources */,
 				7BD83DAC29709436001ECFDD /* ScrollableHeader.xcdatamodeld in Sources */,
+				7BD83DD129709632001ECFDD /* Home.swift in Sources */,
 				7BD83DA229709433001ECFDD /* ContentView.swift in Sources */,
 				7BD83DA029709433001ECFDD /* ScrollableHeaderApp.swift in Sources */,
 			);
