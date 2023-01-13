@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B5A68662971E99E0039DC65 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5A68652971E99E0039DC65 /* Album.swift */; };
 		7BD83DA029709433001ECFDD /* ScrollableHeaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD83D9F29709433001ECFDD /* ScrollableHeaderApp.swift */; };
 		7BD83DA229709433001ECFDD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD83DA129709433001ECFDD /* ContentView.swift */; };
 		7BD83DA429709436001ECFDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BD83DA329709436001ECFDD /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B5A68652971E99E0039DC65 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		7BD83D9C29709433001ECFDD /* ScrollableHeader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollableHeader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BD83D9F29709433001ECFDD /* ScrollableHeaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableHeaderApp.swift; sourceTree = "<group>"; };
 		7BD83DA129709433001ECFDD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		7BD83DCE297095F0001ECFDD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7B5A68652971E99E0039DC65 /* Album.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				7BD83DD129709632001ECFDD /* Home.swift in Sources */,
 				7BD83DA229709433001ECFDD /* ContentView.swift in Sources */,
 				7BD83DA029709433001ECFDD /* ScrollableHeaderApp.swift in Sources */,
+				7B5A68662971E99E0039DC65 /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
