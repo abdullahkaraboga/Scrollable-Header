@@ -16,6 +16,8 @@ struct Home: View {
                 ArtWork()
 
                 GeometryReader { proxy in
+                    let minY = proxy.frame(in: .named("SCROLL")).minY + safeArea.top
+                    
                     Button {
 
                     } label: {
@@ -31,9 +33,11 @@ struct Home: View {
                         }
                     }
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .offset(y: minY < 50 ? -(minY + 50) : 0)
                 }
                     .frame(height: 50)
                     .padding(.top, -34)
+                    .zIndex(1)
 
                 VStack {
                     Text("Popular")
@@ -42,6 +46,7 @@ struct Home: View {
                     AlbumView()
                 }
                     .padding(.top, 10)
+                    .zIndex(0)
             }
                 .overlay(alignment: .top) {
                 HeaderView()
@@ -140,6 +145,7 @@ struct Home: View {
             let minY = proxy.frame(in: .named("SCROLL")).minY
             let height = size.height * 0.45
             let progress = minY / (height * (minY > 0 ? 0.5 : 0.8))
+            let titleProgress = minY / height
 
             HStack(spacing: 15) {
                 Button {
@@ -172,8 +178,19 @@ struct Home: View {
                         .foregroundColor(.white)
                 }
             }
+            .overlay(content: {
+                Text("Metib fdfgkldfgşkl ")
+                    .fontWeight(.semibold)
+                    .offset(y: -titleProgress > 0.75 ? 0 : 45)
+                    .clipped()
+                    .animation(.easeOut(duration: 0.25), value: -titleProgress > 0.75)
+            })
                 .padding(.top, safeArea.top + 10)
                 .padding([.horizontal, .bottom], 15)
+                .background(content : {
+                    Color.black
+                        .opacity(-progress > 1 ? 1 : 0)
+                })
                 .offset(y: -minY)
 
         }
