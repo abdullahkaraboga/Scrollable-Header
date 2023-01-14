@@ -53,17 +53,52 @@ struct Home: View {
 
     @ViewBuilder
     func ArtWork() -> some View {
-        let height = size.height * 0.4
+        let height = size.height * 0.45
 
         GeometryReader { proxy in
             let size = proxy.size
-
+            let minY = proxy.frame(in: .named("SCROLL")).minY
+            let progress = minY / (height * (minY > 0 ? 0.5 : 0.8))
             Image("ArtWork")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: size.width, height: size.height)
+                .frame(width: size.width, height: size.height + (minY > 0 ? minY : 0))
                 .clipped()
 
+                .overlay (content: {
+                ZStack(alignment: .bottom) {
+                    Rectangle()
+                        .fill(
+                            .linearGradient(colors: [
+
+                                .black.opacity(0 - progress),
+                                .black.opacity(0.1 - progress),
+                                .black.opacity(0.3 - progress),
+                                .black.opacity(0.5 - progress),
+                                .black.opacity(0.8 - progress),
+                                .black.opacity(1),
+
+
+                        ], startPoint: .top, endPoint: .bottom))
+
+                    VStack(spacing: 0) {
+                        Text("Text")
+                            .font(.system(size: 45))
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.center)
+
+                        Text("Text")
+                            .font(.caption)
+                            .fontWeight(.bold)
+                            .foregroundColor(.gray)
+                            .padding(.top, 15)
+                    }
+                        .opacity(1 + (progress > 0 ? -progress : progress))
+                        .padding(.bottom, 55)
+                        .offset(y: minY < 0 ? minY : 0)
+                }
+            })
+                .offset(y: -minY)
         }
             .frame(height: height + safeArea.top)
     }
@@ -90,7 +125,7 @@ struct Home: View {
                     }
                         .frame(maxWidth: .infinity, alignment: .leading)
 
-                    Image(systemName: "elipsis")
+                    Image(systemName: "ellipsis")
                         .foregroundColor(.gray)
                 }
 
@@ -102,6 +137,10 @@ struct Home: View {
     @ViewBuilder
     func HeaderView() -> some View {
         GeometryReader { proxy in
+            let minY = proxy.frame(in: .named("SCROLL")).minY
+            let height = size.height * 0.45
+            let progress = minY / (height * (minY > 0 ? 0.5 : 0.8))
+
             HStack(spacing: 15) {
                 Button {
 
@@ -123,7 +162,8 @@ struct Home: View {
                         .padding(.vertical)
                         .border(.red, width: 1.5)
                 }
-                
+                .opacity(1 + progress)
+
                 Button {
 
                 } label: {
@@ -132,11 +172,12 @@ struct Home: View {
                         .foregroundColor(.white)
                 }
             }
-            .padding(.top, safeArea.top + 10)
-            .padding([.horizontal, .bottom], 15)
+                .padding(.top, safeArea.top + 10)
+                .padding([.horizontal, .bottom], 15)
+                .offset(y: -minY)
 
         }
-        .frame(height: 35)
+            .frame(height: 35)
     }
 }
 
